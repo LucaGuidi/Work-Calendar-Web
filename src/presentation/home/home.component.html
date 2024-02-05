@@ -1,0 +1,20 @@
+<form
+  class="main-content"
+  [formGroup]="workingDaysForm"
+  (ngSubmit)="onSubmit()"
+>
+  <div>
+    <input type="date" id="initialDate" formControlName="initialDate" />
+  </div>
+  <br />
+  <div>
+    <input type="date" id="finalDate" formControlName="finalDate" />
+  </div>
+  <br />
+  <button class="btn btn-primary">Calculate</button>
+</form>
+
+<div class="result" *ngIf="isCountVisible">
+  <h3>Working days calculated:</h3>
+  <h1>{{ calculatedDays }}</h1>
+</div>

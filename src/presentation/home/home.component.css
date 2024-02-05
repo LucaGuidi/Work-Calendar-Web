@@ -1,0 +1,27 @@
+input {
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid #171c1f;
+  border-radius: 5px;
+  padding: 1rem 0.7rem;
+  color: #171c1f;
+  transition: 0.1s ease-out;
+  min-width: 200px;
+}
+input:focus {
+  border-color: #70787d;
+}
+input:focus + label {
+  color: #70787d;
+  top: 0;
+  transform: translateY(-50%) scale(0.9);
+}
+input:not(:placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.9);
+}
+
+.result,
+.main-content {
+  margin-top: 10vh;
+}
