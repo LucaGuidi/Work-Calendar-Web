@@ -26,48 +26,12 @@ export const settingsReducer = createReducer(
   initialState,
 
   on(settingsActions.daysChanged, (state, actions) => {
-    switch (actions.name) {
-      case 'monday':
-        return {
-          ...state,
-          monday: !state.monday,
-        };
-      case 'tuesday':
-        return {
-          ...state,
-          tuesday: !state.tuesday,
-        };
-      case 'wednesday':
-        return {
-          ...state,
-          wednesday: !state.wednesday,
-        };
-      case 'thursday':
-        return {
-          ...state,
-          thursday: !state.thursday,
-        };
-      case 'friday':
-        return {
-          ...state,
-          friday: !state.friday,
-        };
-      case 'saturday':
-        return {
-          ...state,
-          saturday: !state.saturday,
-        };
-      case 'sunday':
-        return {
-          ...state,
-          sunday: !state.sunday,
-        };
-      default:
-        return {
-          ...state,
-        };
-    }
+    let stateKey = actions.name as keyof State;
+    return {
+      ...state,
+      [actions.name]: !state[stateKey],
+    };
   }),
 
-  on(settingsActions.dataFetched, (_, actions) => actions)
+  on(settingsActions.dataFetched, (_, newState) => newState)
 );
