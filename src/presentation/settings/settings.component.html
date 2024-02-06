@@ -1,63 +1,71 @@
-<div class="container">
-  <h1>Settings</h1>
-  <h3>Select your holidays</h3>
-  <br />
+<div class="row main-content">
+  <div class="col-3"></div>
 
-  <form [formGroup]="settingsForm">
-    <input
-      type="checkbox"
-      id="monday"
-      formControlName="monday"
-      (click)="onSubmit('monday')"
-    />
-    <label for="monday"> Monday</label><br />
+  <div class="col-6">
+    <div class="container">
+      <h1>Settings</h1>
+      <h3>Select your holidays</h3>
+      <br />
 
-    <input
-      type="checkbox"
-      id="tuesday"
-      formControlName="tuesday"
-      (click)="onSubmit('tuesday')"
-    />
-    <label for="tuesday"> Tuesday</label><br />
+      <form [formGroup]="settingsForm">
+        <input
+          type="checkbox"
+          id="monday"
+          formControlName="monday"
+          (click)="onSubmit('monday')"
+        />
+        <label for="monday"> Monday</label><br />
 
-    <input
-      type="checkbox"
-      id="wednesday"
-      formControlName="wednesday"
-      (click)="onSubmit('wednesday')"
-    />
-    <label for="wednesday"> Wednesday</label><br />
+        <input
+          type="checkbox"
+          id="tuesday"
+          formControlName="tuesday"
+          (click)="onSubmit('tuesday')"
+        />
+        <label for="tuesday"> Tuesday</label><br />
 
-    <input
-      type="checkbox"
-      id="thursday"
-      formControlName="thursday"
-      (click)="onSubmit('thursday')"
-    />
-    <label for="thursday"> Thursday</label><br />
+        <input
+          type="checkbox"
+          id="wednesday"
+          formControlName="wednesday"
+          (click)="onSubmit('wednesday')"
+        />
+        <label for="wednesday"> Wednesday</label><br />
 
-    <input
-      type="checkbox"
-      id="friday"
-      formControlName="friday"
-      (click)="onSubmit('friday')"
-    />
-    <label for="friday"> Friday</label><br />
+        <input
+          type="checkbox"
+          id="thursday"
+          formControlName="thursday"
+          (click)="onSubmit('thursday')"
+        />
+        <label for="thursday"> Thursday</label><br />
 
-    <input
-      type="checkbox"
-      id="saturday"
-      formControlName="saturday"
-      (click)="onSubmit('saturday')"
-    />
-    <label for="saturday"> Saturday</label><br />
+        <input
+          type="checkbox"
+          id="friday"
+          formControlName="friday"
+          (click)="onSubmit('friday')"
+        />
+        <label for="friday"> Friday</label><br />
 
-    <input
-      type="checkbox"
-      id="sunday"
-      formControlName="sunday"
-      (click)="onSubmit('sunday')"
-    />
-    <label for="sunday"> Sunday</label><br />
-  </form>
+        <input
+          type="checkbox"
+          id="saturday"
+          formControlName="saturday"
+          (click)="onSubmit('saturday')"
+        />
+        <label for="saturday"> Saturday</label><br />
+
+        <input
+          type="checkbox"
+          id="sunday"
+          formControlName="sunday"
+          (click)="onSubmit('sunday')"
+        />
+        <label for="sunday"> Sunday</label><br />
+      </form>
+    </div>
+  </div>
+
+  <div class="col-3"></div>
 </div>
