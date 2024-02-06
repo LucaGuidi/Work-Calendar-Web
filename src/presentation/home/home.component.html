@@ -1,14 +1,16 @@
-<div class="row main-content">
+<div class="row">
   <div class="col-3">
-    <p class="container">Public IT holidays are automatically subtract from the calculation.</p>
+    <p class="container">
+      Public IT holidays are automatically subtract from the calculation.
+    </p>
   </div>
 
   <div class="col-6">
-    <form
-      class="main-content"
-      [formGroup]="workingDaysForm"
-      (ngSubmit)="onSubmit()"
-    >
+    <app-calendar></app-calendar>
+  </div>
+
+  <div class="col-3">
+    <form [formGroup]="workingDaysForm" (ngSubmit)="onSubmit()">
       <div>
         <input type="date" id="initialDate" formControlName="initialDate" />
       </div>
@@ -25,6 +27,4 @@
       <h1>{{ calculatedDays }}</h1>
     </div>
   </div>
-
-  <div class="col-3"></div>
 </div>

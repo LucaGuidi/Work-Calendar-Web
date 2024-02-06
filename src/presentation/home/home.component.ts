@@ -10,11 +10,12 @@ import { fromSubmitted } from './store/home.actions';
 
 import * as fromApp from '../../base/store/app.reducer';
 import { CommonModule } from '@angular/common';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, CalendarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

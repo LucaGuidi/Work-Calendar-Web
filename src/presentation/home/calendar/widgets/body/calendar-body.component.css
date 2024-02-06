@@ -1,0 +1,20 @@
+/* .table-row {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+} */
+
+.table-cell {
+  text-align: center;
+  width: 5vw;
+  height: 30px;
+}
+
+.offset {
+  color: #96a7b1;
+}
+
+.holiday {
+  color: red;
+}
