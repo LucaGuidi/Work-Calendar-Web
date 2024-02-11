@@ -1,20 +1,29 @@
-/* .table-row {
-  display: flex;
-  flex-direction: row;
+.container {
+  margin-top: 20px;
+  font-size: x-large;
+}
 
-  justify-content: space-between;
-} */
+table {
+  width: 100%;
+  max-width: 500px;
+}
+
+th {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+td {
+  font-size: x-large;
+  font-weight: 600;
+}
 
 .table-cell {
   text-align: center;
-  width: 5vw;
-  height: 30px;
+  padding: 10px;
 }
 
 .offset {
-  color: #96a7b1;
-}
-
-.holiday {
-  color: red;
+  color: gray;
+  font-weight: 100;
 }

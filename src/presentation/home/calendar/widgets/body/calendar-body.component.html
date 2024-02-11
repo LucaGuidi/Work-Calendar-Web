@@ -1,20 +1,22 @@
-<table>
-  <tr class="table-row">
-    <th class="table-cell">Mon</th>
-    <th class="table-cell">Tue</th>
-    <th class="table-cell">Wed</th>
-    <th class="table-cell">Thu</th>
-    <th class="table-cell">Fri</th>
-    <th class="table-cell">Sat</th>
-    <th class="table-cell">Sun</th>
-  </tr>
-  <tr class="table-row" *ngFor="let row of visibleDays">
-    <td
-      [ngClass]="cell.holiday ? 'holiday' : cell.offset ? 'offset' : null"
-      class="table-cell"
-      *ngFor="let cell of row"
-    >
-      {{ cell.number }}
-    </td>
-  </tr>
-</table>
+<div class="container">
+  <table>
+    <tr class="table-row">
+      <th class="table-cell">Mon</th>
+      <th class="table-cell">Tue</th>
+      <th class="table-cell">Wed</th>
+      <th class="table-cell">Thu</th>
+      <th class="table-cell">Fri</th>
+      <th class="table-cell">Sat</th>
+      <th class="table-cell">Sun</th>
+    </tr>
+    <tr class="table-row" *ngFor="let row of visibleDays">
+      <td
+        [ngClass]="cell.holiday ? 'holiday' : cell.offset ? 'offset' : null"
+        class="table-cell"
+        *ngFor="let cell of row"
+      >
+        {{ cell.number }}
+      </td>
+    </tr>
+  </table>
+</div>

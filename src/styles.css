@@ -1,90 +1,22 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   font-family: "Raleway", "sans-seriff";
-  background-color: #f6fafd;
-  color: #171c1f;
-  box-sizing: border-box;
 }
 
-/* BUTTONS */
 .btn {
-  padding: 0 1.5rem;
-  height: 36px;
-  line-height: 36px;
-  min-width: 64px;
-  border-radius: 3px;
-  border: 0;
-  font-size: 15px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
+  font-size: x-large;
+  border: none;
+  border-radius: none;
   cursor: pointer;
-  transition: all 0.3s ease-out;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
-}
-.btn:hover {
-  text-decoration: none;
-  box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.225);
 }
 
 .btn-primary {
-  background: #126682;
-  color: #ffffff;
+  color: white;
+  background: black;
+  padding: 16px 32px;
 }
 
-/* LAYOUT */
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-}
-
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-[class*="col-"] {
-  float: left;
-  padding: 15px;
-}
-
-.col-1 {
-  width: 8.33%;
-}
-.col-2 {
-  width: 16.66%;
-}
-.col-3 {
-  width: 25%;
-}
-.col-4 {
-  width: 33.33%;
-}
-.col-5 {
-  width: 41.66%;
-}
-.col-6 {
-  width: 50%;
-}
-.col-7 {
-  width: 58.33%;
-}
-.col-8 {
-  width: 66.66%;
-}
-.col-9 {
-  width: 75%;
-}
-.col-10 {
-  width: 83.33%;
-}
-.col-11 {
-  width: 91.66%;
-}
-.col-12 {
-  width: 100%;
+.btn-primary:hover {
+  background: #4c4c4c;
 }

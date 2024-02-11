@@ -5,10 +5,10 @@ import { ActionReducer, MetaReducer, State, provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { HomeEffects } from './presentation/home/store/home.effects';
 import { HttpClientModule } from '@angular/common/http';
-
-import * as fromApp from './base/store/app.reducer';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SettingsEffects } from './presentation/settings/store/settings.effects';
+
+import * as fromApp from './base/store/app.reducer';
 
 export function logger(reducer: ActionReducer<any>): ActionReducer<any> {
   return (state: any, action: any): any => {

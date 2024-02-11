@@ -31,5 +31,23 @@ export const calendarReducer = createReducer(
       ...state,
       visibleDate: newDate,
     };
+  }),
+
+  on(calendarActions.previousMonth, (state) => {
+    let newDate: Date;
+    if (state.visibleDate.getMonth() == 0) {
+      newDate = new Date(state.visibleDate.getFullYear() - 1, 11, 1);
+    } else {
+      newDate = new Date(
+        state.visibleDate.getFullYear(),
+        state.visibleDate.getMonth() - 1,
+        1
+      );
+    }
+
+    return {
+      ...state,
+      visibleDate: newDate,
+    };
   })
 );

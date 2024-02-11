@@ -1,29 +1,27 @@
+.container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin-top: 15vh;
+}
+
+.col-4 {
+  place-self: center;
+  padding: 10px;
+}
+
+.col-8 {
+  place-self: center;
+  padding: 10px;
+}
+
 input {
-  font-size: 1rem;
-  outline: none;
-  border: 1px solid #171c1f;
-  border-radius: 5px;
-  padding: 1rem 0.7rem;
-  color: #171c1f;
-  transition: 0.1s ease-out;
-  min-width: 200px;
-}
-input:focus {
-  border-color: #70787d;
-}
-input:focus + label {
-  color: #70787d;
-  top: 0;
-  transform: translateY(-50%) scale(0.9);
-}
-input:not(:placeholder-shown) + label {
-  top: 0;
-  transform: translateY(-50%) scale(0.9);
+  padding: 4px 38px;
+  font-size: x-large;
+  color: gray;
+  border: 1px solid #4c4c4c;
+  border-radius: 3px;
 }
 
 .result {
-  margin-top: 10vh;
-}
-.container {
-  padding: 50px;
+  font-size: x-large;
 }
