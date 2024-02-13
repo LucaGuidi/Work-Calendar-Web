@@ -1,27 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  getMonthName,
-  getVisibleDaysRange,
-} from '../../../../../shared/utils/calendar.utils';
 import { Store } from '@ngrx/store';
 import { nextMonth, previousMonth } from '../../store/calendar.actions';
 
 import * as fromApp from '../../../../../base/store/app.reducer';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-calendar-header',
+  imports: [CommonModule],
   templateUrl: './calendar-header.component.html',
   styleUrl: './calendar-header.component.css',
 })
 export class CalendarHeaderComponent implements OnInit {
-  title: string = '';
+  visibleDay!: Date;
 
   ngOnInit(): void {
     this.store.select('calendar').subscribe((state) => {
-      this.title = `${getMonthName(
-        state.visibleDate
-      )} (${state.visibleDate.getFullYear()})`;
+      this.visibleDay = state.visibleDate;
     });
   }
 

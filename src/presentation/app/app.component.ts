@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import * as fromApp from '../../base/store/app.reducer';
 import { init } from '../settings/store/settings.actions';
 import { calendarInit } from '../home/calendar/store/calendar.actions';
+import { WeekDay } from '@angular/common';
 
 @Component({
   selector: 'app-root',

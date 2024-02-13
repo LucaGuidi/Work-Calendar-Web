@@ -1,10 +1,9 @@
+import '../../../../../shared/extensions/common.extension';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
-  containsHoliday,
   getListFromState,
   getVisibleDays,
-  isSameDay,
 } from '../../../../../shared/utils/calendar.utils';
 import { Store } from '@ngrx/store';
 
@@ -43,12 +42,12 @@ export class CalendarBodyComponent implements OnInit {
   }
 
   todayPredicate(event: Date): string {
-    if (isSameDay(this.today, event)) return 'today';
+    if (this.today.isSameDateAs(event)) return 'today';
     return '';
   }
 
   holidayPredicate(event: Date): string {
-    if (containsHoliday(this.holidays, event)) return 'holiday';
+    if (this.holidays.containsDate(event)) return 'holiday';
     return '';
   }
 
