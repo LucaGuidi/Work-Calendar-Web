@@ -5,11 +5,13 @@ import * as calendarActions from './calendar.actions';
 export interface State {
   today: Date;
   visibleDate: Date;
+  holidays: Date[];
 }
 
 export const initialState: State = {
   today: new Date(),
   visibleDate: new Date(),
+  holidays: [],
 };
 
 export const calendarReducer = createReducer(
@@ -48,6 +50,19 @@ export const calendarReducer = createReducer(
     return {
       ...state,
       visibleDate: newDate,
+    };
+  }),
+
+  on(calendarActions.holidaysFetched, (state, actions) => {
+    let holidaysDate: Date[] = [];
+
+    actions.holidays.forEach((item) => {
+      holidaysDate.push(new Date(item.year, item.month - 1, item.day));
+    });
+
+    return {
+      ...state,
+      holidays: holidaysDate,
     };
   })
 );

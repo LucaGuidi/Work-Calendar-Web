@@ -9,13 +9,18 @@
       <th class="table-cell">Sat</th>
       <th class="table-cell">Sun</th>
     </tr>
-    <tr class="table-row" *ngFor="let row of visibleDays">
+    <tr class="table-row" *ngFor="let week of visibleDays">
       <td
-        [ngClass]="cell.holiday ? 'holiday' : cell.offset ? 'offset' : null"
+        [ngClass]="[
+          todayPredicate(day),
+          holidayPredicate(day),
+          offsetPredicate(day),
+          nonWorkingPredicate(day)
+        ]"
         class="table-cell"
-        *ngFor="let cell of row"
+        *ngFor="let day of week"
       >
-        {{ cell.number }}
+        {{ day.getDate() }}
       </td>
     </tr>
   </table>

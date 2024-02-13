@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 
 import * as fromApp from '../../base/store/app.reducer';
 import { init } from '../settings/store/settings.actions';
+import { calendarInit } from '../home/calendar/store/calendar.actions';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { init } from '../settings/store/settings.actions';
 export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(init());
+    this.store.dispatch(calendarInit());
   }
 
   constructor(private store: Store<fromApp.AppState>) {}

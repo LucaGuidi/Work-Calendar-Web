@@ -1,3 +1,4 @@
+import * as fromSettings from '../../presentation/settings/store/settings.reducer';
 export class DateRange {
   constructor(public start: Date, public end: Date) {}
 }
@@ -37,7 +38,7 @@ export function getTableRowsCount(date: Date): number[] {
   return rowsArray;
 }
 
-function getVisibleDays(date: Date) {
+function getVisibleDaysCount(date: Date) {
   return getDaysBefore(date) + getDaysInMonth(date) + getDaysAfter(date);
 }
 
@@ -86,19 +87,20 @@ export function getMonthName(date: Date): string {
   }
 }
 
-export function getDaysTable(date: Date) {
-  let startDate = getVisibleDaysRange(date).start;
+export function getVisibleDays(date: Date) {
+  let currentDate = getVisibleDaysRange(date).start;
   let days = [];
   let weeks = [];
 
-  for (let i = 0; i < getVisibleDays(date); i++) {
-    let isOffset = startDate.getMonth() !== date.getMonth();
-    days.push({
-      number: startDate.getDate(),
-      offset: isOffset,
-      holiday: false,
-    });
-    startDate.setDate(startDate.getDate() + 1);
+  for (let i = 0; i < getVisibleDaysCount(date); i++) {
+    days.push(
+      new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth(),
+        currentDate.getDate()
+      )
+    );
+    currentDate.setDate(currentDate.getDate() + 1);
   }
 
   for (let i = 0; i < days.length; i += 7) {
@@ -106,4 +108,41 @@ export function getDaysTable(date: Date) {
   }
 
   return weeks;
+}
+
+export function isSameDay(d1: Date, d2: Date): boolean {
+  return (
+    d1.getFullYear() === d2.getFullYear() &&
+    d1.getMonth() === d2.getMonth() &&
+    d1.getDate() === d2.getDate()
+  );
+}
+
+export function containsHoliday(array: Date[], date: Date) {
+  let hasHoliday = false;
+
+  for (let day of array) {
+    if (
+      day.getFullYear() === date.getFullYear() &&
+      day.getMonth() === date.getMonth() &&
+      day.getDate() === date.getDate()
+    ) {
+      hasHoliday = true;
+      break;
+    }
+  }
+
+  return hasHoliday;
+}
+
+export function getListFromState(state: fromSettings.State) {
+  let list = [];
+  if (state.sunday) list.push(0);
+  if (state.monday) list.push(1);
+  if (state.tuesday) list.push(2);
+  if (state.wednesday) list.push(3);
+  if (state.thursday) list.push(4);
+  if (state.friday) list.push(5);
+  if (state.saturday) list.push(6);
+  return list;
 }

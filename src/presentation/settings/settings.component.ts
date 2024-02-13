@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { take } from 'rxjs';
 
 import * as fromApp from '../../base/store/app.reducer';
 import * as settingsActions from '../settings/store/settings.actions';
-import { take } from 'rxjs';
 
 @Component({
   standalone: true,
