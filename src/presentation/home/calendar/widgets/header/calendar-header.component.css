@@ -1,11 +1,8 @@
 .header-row {
   display: flex;
   flex-direction: row;
-
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  width: 100%;
-
-  font-size: xx-large;
+  font-size: 1.2rem;
 }

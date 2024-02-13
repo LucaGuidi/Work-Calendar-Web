@@ -1,27 +1,18 @@
-.container {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  margin-top: 15vh;
-}
-
-.col-4 {
-  place-self: center;
-  padding: 10px;
-}
-
-.col-8 {
-  place-self: center;
-  padding: 10px;
-}
-
 input {
   padding: 4px 38px;
-  font-size: x-large;
+  font-size: 1.2rem;
   color: gray;
   border: 1px solid #4c4c4c;
   border-radius: 3px;
 }
 
 .result {
-  font-size: x-large;
+  font-size: 1.5rem;
+}
+
+.container {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

@@ -1,8 +1,8 @@
 .container {
   display: grid;
   grid-template-columns: 40% 60%;
-  margin-top: 15vh;
-  font-size: x-large;
+  margin-top: 10vh;
+  font-size: 1.2rem;
 }
 
 .col-4 {

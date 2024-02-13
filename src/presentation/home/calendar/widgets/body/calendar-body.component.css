@@ -1,24 +1,15 @@
 .container {
   margin-top: 20px;
-  font-size: x-large;
+  font-size: 1.2rem;
 }
 
 table {
   width: 100%;
-  max-width: 500px;
+  table-layout: fixed;
 }
 
-th {
-  font-size: xx-large;
-  font-weight: bold;
-}
-
+th,
 td {
-  font-size: x-large;
-  font-weight: 600;
-}
-
-.table-cell {
   text-align: center;
   padding: 10px;
 }
@@ -29,8 +20,8 @@ td {
 }
 
 .today {
-  border: 1px solid black;
-  border-radius: 100%;
+  background-color: #d9e1cc;
+  
 }
 
 .holiday {

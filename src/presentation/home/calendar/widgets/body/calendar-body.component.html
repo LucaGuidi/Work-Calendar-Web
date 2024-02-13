@@ -1,15 +1,15 @@
 <div class="container">
   <table>
-    <tr class="table-row">
-      <th class="table-cell">Mon</th>
-      <th class="table-cell">Tue</th>
-      <th class="table-cell">Wed</th>
-      <th class="table-cell">Thu</th>
-      <th class="table-cell">Fri</th>
-      <th class="table-cell">Sat</th>
-      <th class="table-cell">Sun</th>
+    <tr>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Sat</th>
+      <th>Sun</th>
     </tr>
-    <tr class="table-row" *ngFor="let week of visibleDays">
+    <tr *ngFor="let week of visibleDays">
       <td
         [ngClass]="[
           todayPredicate(day),
@@ -17,7 +17,6 @@
           offsetPredicate(day),
           nonWorkingPredicate(day)
         ]"
-        class="table-cell"
         *ngFor="let day of week"
       >
         {{ day.getDate() }}
