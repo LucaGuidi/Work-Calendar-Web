@@ -1,28 +1,34 @@
 <div class="col-5 col-s-12">
   <div class="container">
-    <app-calendar></app-calendar>
+    <div class="row">
+      <form [formGroup]="workingDaysForm" (ngSubmit)="onSubmit()">
+        <h2>Working Days Calculator</h2>
+        <br />
+        <div>
+          <input type="date" id="initialDate" formControlName="initialDate" />
+        </div>
+        <br />
+        <div>
+          <input type="date" id="finalDate" formControlName="finalDate" />
+        </div>
+        <br />
+        <button class="btn btn-primary">Calculate</button>
+      </form>
+
+      <div class="result" *ngIf="isCountVisible">
+        <div class="result-ctn">
+          <h1>{{ calculatedDays }}</h1>
+        </div>
+        <h3>Working Days Remaining</h3>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="calendar-container">
+      <app-calendar></app-calendar>
+    </div>
   </div>
 </div>
 
-<div class="col-5 col-s-12">
-  <div class="container">
-    <!-- <h2>Public IT holidays are automatically subtract from the calculation.</h2>
-    <br />
-    <form [formGroup]="workingDaysForm" (ngSubmit)="onSubmit()">
-      <div>
-        <input type="date" id="initialDate" formControlName="initialDate" />
-      </div>
-      <br />
-      <div>
-        <input type="date" id="finalDate" formControlName="finalDate" />
-      </div>
-      <br />
-      <button class="btn btn-primary">Calculate</button>
-    </form>
-    <br />
-    <div class="result" *ngIf="isCountVisible">
-      <h3>Working days calculated:</h3>
-      <h1>{{ calculatedDays }}</h1>
-    </div> -->
-  </div>
-</div>
+<div class="col-5 col-s-12"></div>

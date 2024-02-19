@@ -20,6 +20,20 @@ body {
 }
 
 .btn-primary {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #a6a6a6;
+  background: #242423CC;
+  padding: 10px 20px;
+  border-radius: 60px;
+  box-shadow: 3px 1px 3px #000000;
+}z
+
+.btn-primary:hover {
+  background: #4c4c4c;
+}
+
+.btn-control {
   font-family: monospace;
   font-weight: 900;
   font-size: 2.5rem;
@@ -28,7 +42,7 @@ body {
   padding: 5px 20px;
 }
 
-.btn-primary:hover {
+.btn-control:hover {
   background: #4c4c4c;
 }
 
