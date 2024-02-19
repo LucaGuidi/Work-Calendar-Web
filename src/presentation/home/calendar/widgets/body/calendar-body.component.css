@@ -1,17 +1,13 @@
 .container {
   margin-top: 20px;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 table {
   width: 100%;
   table-layout: fixed;
-}
-
-th,
-td {
-  font-size: 1.5rem;
-  font-weight: 600;
+  border-collapse: collapse;
 }
 
 .table-cell {
@@ -23,22 +19,68 @@ td {
 
 .table-header {
   color: #a6a6a6;
-  font-weight: bold;
+  font-weight: bolder;
   text-shadow: 3px 1px 3px #000000;
   text-align: center;
   padding: 10px;
+  border-bottom: 4px solid #242423;
+  border-radius: 6px;
 }
 
-.today {
-  background-color: #d9e1cc;
-  
+.non-working .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #737373;
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  background-color: #242423;
 }
 
-.holiday {
-  color: red !important;
-  font-weight: 600 !important;
+.offset .box,
+.offset .holiday .box {
+  background-color: transparent !important;
 }
 
-.non-working {
-  background-color: #d0d0d0;
+.holiday .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff0000;
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  background-color: #200f0fb3;
+}
+
+.today .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: #4e2d8f;
+}
+
+.today .outerbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #4e2d8f;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  background-color: #545454;
 }

@@ -1,17 +1,19 @@
 <div class="container">
   <table>
     <tr>
-      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wed</th>
-      <th>Thu</th>
-      <th>Fri</th>
-      <th>Sat</th>
-      <th>Sun</th>
+      <th class="table-header">Mon</th>
+      <th class="table-header">Tue</th>
+      <th class="table-header">Wed</th>
+      <th class="table-header">Thu</th>
+      <th class="table-header">Fri</th>
+      <th class="table-header">Sat</th>
+      <th class="table-header">Sun</th>
     </tr>
+
     <tr *ngFor="let week of visibleDays">
       <td
         [ngClass]="[
+          'table-cell',
           todayPredicate(day),
           holidayPredicate(day),
           offsetPredicate(day),
@@ -19,7 +21,11 @@
         ]"
         *ngFor="let day of week"
       >
-        {{ day.getDate() }}
+        <div class="outerbox">
+          <div class="box">
+            {{ day.getMonth() != visibleDate.getMonth() ? "" : day.getDate() }}
+          </div>
+        </div>
       </td>
     </tr>
   </table>

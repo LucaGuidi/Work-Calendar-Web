@@ -6,7 +6,6 @@
 
 .nav-container {
   height: 50px;
-  width: 35vw;
   border-radius: 6px;
   background-color: #545454;
   display: flex;
@@ -42,4 +41,8 @@
 
 .active {
   color: #d9d9d9;
+}
+
+.last {
+  margin-right: 20px;
 }

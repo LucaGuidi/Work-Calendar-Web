@@ -52,7 +52,11 @@ export class CalendarBodyComponent implements OnInit {
   }
 
   nonWorkingPredicate(event: Date): string {
-    if (this.nonWorkingDaysList.includes(event.getDay())) return 'non-working';
+    if (
+      this.nonWorkingDaysList.includes(event.getDay()) &&
+      event.getMonth() === this.visibleDate.getMonth()
+    )
+      return 'non-working';
     return '';
   }
 
